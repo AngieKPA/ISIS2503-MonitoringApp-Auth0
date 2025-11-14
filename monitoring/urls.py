@@ -1,11 +1,9 @@
 from django.contrib import admin
-from django.urls import include, path
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('', include('measurements.urls')),
-    path('', include('variables.urls')),
+    path('', include('products.urls')),
+    path('', include('inventory.urls')),
+    path('', include('social_django.urls')),  # para Auth0
 ]
-

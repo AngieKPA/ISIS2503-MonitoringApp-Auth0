@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventario</h2>
+<table>
+  <tr>
+    <th>Producto</th><th>Ubicación</th><th>Cantidad</th><th>Lote</th>
+  </tr>
+  {% for item in stock_items %}
+  <tr>
+    <td>{{ item.product.name }}</td>
+    <td>{{ item.location.code }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ item.lot }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'inventory_create' %}">Registrar entrada</a>
+{% endblock %}
